@@ -20,11 +20,9 @@ go run client/client.go -write -id 006 -name abc -low 0 -mid 10 -high 100
 
 Server 3, running on port 9003 does not have read/write from config.yaml so there will be no output on server 3 whatsoever.
 
-Step 6) Trying the same for id = 007
+Step 6) Trying the same for id = 007. 
 
-Writer is only activated for the 9002 server port, therefore server 2 with port 9002 gets updated.
- 
-The server adds 007 to its pre-existing list of tokens it holds, and it now becomes [006, 007]. Thus, client gets updated.
+Writer is only activated for the 9002 server port, therefore server 2 with port 9002 gets updated. The server adds 007 to its pre-existing list of tokens it holds, and it now becomes [006, 007]. Thus, client gets updated.
 
 Step 7) If we check read operation for non-existing token ids – 001 and 002, we see that the result is blank, and we do not get any desired output.
 
