@@ -1,0 +1,16 @@
+
+006:
+  id: 006
+  writer: 
+    - localhost:9001
+    - localhost:9002
+  reader:
+    - localhost:9002
+    - localhost:9003
+007:
+  id: 007
+  writer: 
+    - localhost:9002
+  reader:
+    - localhost:9003
+    - localhost:9001

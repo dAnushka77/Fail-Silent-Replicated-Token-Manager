@@ -1,0 +1,44 @@
+syntax = "proto3";
+package token;
+option go_package = "Proj3/token;token";
+
+//creating service token_service for the Create, Read, Write and drop token operations
+
+service token_service {
+    rpc Token_Create (Create_ID) returns (Token_Info) {}
+    rpc Token_Read (Read_ID) returns (Final){}
+    rpc Token_Write (Write_ID) returns (Partial){}
+    rpc Token_Drop (Drop_ID) returns (Drop_Info){}
+}
+
+message Create_ID {string cid = 1;}
+message Token_Info {string cinfo = 1;}
+
+message Read_ID{string readid = 1;}
+message Final{
+    string rid = 4;
+    string rname = 5;
+    uint64 low = 6;
+    uint64 rhigh = 7;
+    uint64 rmid = 8;
+    int64 rts = 9;
+    uint64 final = 1;
+    string info = 2;
+    int64 ts = 3;
+}
+
+message Write_ID{
+    uint64 wlow = 3;
+    uint64 whigh = 4;
+    uint64 wmid = 5;
+    string wid = 1;
+    string wname = 2;
+    int64 wts = 6;
+}
+message Partial{
+    string pinfo = 2;
+    uint64 pvalue = 1;
+}
+
+message Drop_Info{}
+message Drop_ID {string did = 1;}
